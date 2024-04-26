@@ -1,7 +1,21 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "nodemon": "^3.1.0"
-  }
+	"name": "phone-app-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"devDependencies": {},
+	"scripts": {
+		"server": "nodemon index.js"
+	},
+	"keywords": [],
+	"author": "Anunay Argha",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"mongodb": "^6.5.0",
+		"nodemon": "^3.1.0"
+	}
 }
