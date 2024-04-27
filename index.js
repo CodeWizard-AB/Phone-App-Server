@@ -47,6 +47,25 @@ async function run() {
 			res.send(result);
 		});
 
+		app.delete("/contacts/:id", async (req, res) => {
+			const result = await contactCollection.deleteOne({
+				_id: new ObjectId(req.params.id),
+			});
+			res.send(result);
+		});
+
+		app.put(`/contacts/:id`, async (req, res) => {
+			const filter = { _id: new ObjectId(req.params.id) };
+			const updated = { $set: req.body };
+			const options = { upsert: true };
+			const result = await contactCollection.updateOne(
+				filter,
+				updated,
+				options
+			);
+			res.send(result);
+		});
+
 		// Send a ping to confirm a successful connection
 		// await client.db("admin").command({ ping: 1 });
 		console.log(
